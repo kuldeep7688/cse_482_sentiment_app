@@ -210,12 +210,10 @@ def create_pipeline_object(
     )
     return ppl
 
-@st.cache_data
 def train_model(clf, train_df):
     clf.fit(train_df, train_df["label"])
     return clf     
     
-@st.cache_resource
 def create_df(text):
     df = pd.DataFrame()
     df['tweet'] = [text]
